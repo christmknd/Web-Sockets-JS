@@ -7,6 +7,7 @@ services:
     build: ./back
     ports:
       - 8000:8000 # Nous exposons le port 8800
+      - 9000:9000
 
   front:
     container_name: front-reactjs
@@ -21,4 +22,4 @@ services:
       - ./front/src:/app/src
     # # it will start our frontend container once backend-container is  up and running.
     depends_on:
-      - backend
+      - back
